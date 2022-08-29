@@ -5,18 +5,22 @@
 
 #pragma pack(push,1)
 struct TGAHeader {
-    std::uint8_t  idlength{};
-    std::uint8_t  colormaptype{};
-    std::uint8_t  datatypecode{};
-    std::uint16_t colormaporigin{};
-    std::uint16_t colormaplength{};
-    std::uint8_t  colormapdepth{};
-    std::uint16_t x_origin{};
-    std::uint16_t y_origin{};
-    std::uint16_t width{};
-    std::uint16_t height{};
-    std::uint8_t  bitsperpixel{};
-    std::uint8_t  imagedescriptor{};
+    std::uint8_t  idlength{};   // 图像信息字段长度 
+    std::uint8_t  colormaptype{};   // 颜色表类型
+    std::uint8_t  datatypecode{};   // 图像类型码
+    std::uint16_t colormaporigin{}; // 颜色表首地址
+    std::uint16_t colormaplength{}; // 颜色表长度
+    std::uint8_t  colormapdepth{};  // 颜色表项位数
+    std::uint16_t x_origin{};   // 图像X坐标起始位置
+    std::uint16_t y_origin{};   // 图像Y坐标起始位置
+    std::uint16_t width{};  // 图像宽度
+    std::uint16_t height{}; // 图像高度
+    std::uint8_t  bitsperpixel{};   // 图像每像素存储占用位数
+    std::uint8_t  imagedescriptor{};    // 图像描述字节
+    // 图像信息字段 可变
+    // 颜色表数据   可变
+    // 图像数据     可变
+
 };
 #pragma pack(pop)
 
